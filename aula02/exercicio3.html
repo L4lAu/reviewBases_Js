@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>valor da passagem</h1>
+    <input type="number" id="valor">
+    <h1>quantidade de passagems mensais</h1>
+    <input type="number" id="passagem">
+    <button onclick="calcularEconomia()">Ver economia</button>
+    <span id="mensagem"></span>
+</body>
+</html>
+
+<script>
+    function calcularEconomia (){
+        let X = ((Number(valor.value) / 2) * Number(passagem.value))
+        mensagem.innerHTML = ("Você economizará R$" + X + " por mês")
+    }
+</script>
