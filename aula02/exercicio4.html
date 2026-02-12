@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>qual seu nome?</h1>
+    <input type="text" id="nome">
+    <h1> qual tamanho do ki? </h1>
+    <input type="number" id="ki">
+    <button onclick="calcular()">Ver ki em cada forma</button>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        alert(`O ki de ${nome.value} na forma Super Sayajin é ${Number(ki.value) * 50}`)
+        alert(`O ki de ${nome.value} na forma Super Sayajin 2 é ${Number(ki.value) * 100}`)
+    }
+</script>
