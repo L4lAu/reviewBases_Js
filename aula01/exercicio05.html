@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1> qual a opniao familiar da nota do aluno?</h1>
+        <span>nota da vó</span>
+        <input type="number" id="X">
+        <button onclick="opniaoVo()">opnião da vó</button>
+        <br><br><br>
+        <span>nota da mãe</span>
+        <input type="number" id="Y">
+        <button onclick="opniaoMae()">opnião da mãe</button>
+        <br><br><br>
+        <span id="mensagem"></span>
+    </center>
+</body>
+
+</html>
+
+<script>
+    function opniaoVo() {
+        mensagem.innerHTML ="Muito bem, que neto inteligente, porque tirou " + X.value;
+    };
+
+    function opniaoMae() {
+        mensagem.innerHTML = "Não fez mais que tua obrigação com essa nota " + Y.value;
+    };
+</script>
