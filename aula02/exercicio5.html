@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>nome do aluno?</h1>
+    <input type="text" id="nome">
+    <h1>Qual a nota da continuada?</h1>
+    <input type="number" id="cont">
+    <h1>Qual a nota de pesquisa e inovação?</h1>
+    <input type="number" id="pi">
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <span id="mensagem"></span>
+</body>
+</html>
+
+<script>
+    function calcularMedia(){
+        let media = ((Number(cont.value) * 0.4) + (Number(pi.value) * 0.6))
+        mensagem.innerHTML = `a media de ${nome.value} será de ${media}`
+    }
+</script>
