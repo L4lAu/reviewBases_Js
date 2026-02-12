@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>numero de amigos</h1>
+    <input type="text" id="amg">
+    <h1>valor da pizza</h1>
+    <input type="text" id="vlr">
+    <button onclick="calcular()">#lovePizza</button>
+    <span id="result"></span>
+</body>
+
+</html>
+
+
+
+<script>
+
+    function calcular() {
+        result.innerHTML = ("Cada um dos " + amg.value + " amigos vai pagar R$" + (Number(vlr.value) / Number(amg.value)))
+    }
+</script>
