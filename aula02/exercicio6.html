@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <h1>numero 1</h1>
+        <input type="text" id="n1">
+        <h1>numero 2</h1>
+        <input type="text" id="n2">
+        <br><br>
+        <button onclick="soma()">soma</button>
+        <button onclick="diferenca()">diferença</button>
+        <button onclick="produto()">produto</button>
+        <button onclick="razao()">razão</button>
+        <br>
+        <span id="mensagem"></span>
+    </center>
+</body>
+
+</html>
+<script>
+    function soma() {
+        let calculo = ((Number(n1.value)) + (Number(n2.value)))
+        mensagem.innerHTML = `a soma entre ${n1.value} e ${n2.value} é ${calculo}`
+    }
+    function diferenca() {
+        let calculo = ((Number(n1.value)) - (Number(n2.value)))
+        mensagem.innerHTML = `diferença entre ${n1.value} e ${n2.value} é ${calculo}`
+    }
+    function produto() {
+        let calculo = ((Number(n1.value)) * (Number(n2.value)))
+        mensagem.innerHTML = `o produdo entre ${n1.value} e ${n2.value} é ${calculo}`
+    }
+    function razao() {
+        let calculo = ((Number(n1.value)) / (Number(n2.value)))
+        mensagem.innerHTML = `a razão entre ${n1.value} e ${n2.value} é ${calculo}`
+    }
+</script>
