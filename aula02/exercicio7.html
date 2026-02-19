@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head>
+<body>
+    <button onclick="botao100()">receber 100</button>
+    <button onclick="botao50()">pagar 50</button>
+    <h1>saldo</h1>
+    <span id="mensagem"></span>
+</body>
+</html>
+
+<script>
+    let saldo = 0;
+    function botao100 (){
+        saldo = saldo + 100;
+        mensagem.innerHTML = saldo;
+    }
+    function botao50(){
+        saldo = saldo - 50;
+        mensagem.innerHTML = saldo;
+    }
+</script>
