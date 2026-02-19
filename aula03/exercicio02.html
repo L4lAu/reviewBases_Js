@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>qunatos refri voce consome por dia?</h1>
+    <input type="number" id="numeroRefri">
+    <button onclick="calcularQuantidade()">quantos refris por ano</button>
+</body>
+</html>
+
+<script>
+    function calcularQuantidade(){
+        let quantidadeAnual = (Number(numeroRefri.value) * 365);
+        
+        alert(`voce bebe ${quantidadeAnual} por ano`);
+        
+        if(quantidadeAnual >= 500) {
+            alert("cuidado com a diabetes");
+        };
+    };
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>numero de amigos</h1>
+    <input type="number" id="amigos">
+    <h1>valor da pizza</h1>
+    <input type="number" id="valor">
+    <button onclick="calcular()">Rola a pizza?</button>
+    <span id="result"></span>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        let media = ((Number(valor.value)/Number(amigos.value)))
+        result.innerHTML = (`cada amigo vai pagar R$${media}`)
+        if(media > 20) {
+            result.innerHTML = `<span style="color: red;">Deu ruim! Pizza muito cara!</span>`
+        }
+        }
+</script>

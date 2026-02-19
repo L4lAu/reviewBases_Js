@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>quantos KWh</h1>
+    <input type="number" id="ipt_KWh">
+    <button onclick="calcular()">Calcular conta de luz</button>
+    <span id="mensagem"></span>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        custo = 0.85
+        if ((ipt_KWh.value) < 100 ) {
+            custoFinal = custo * 0.90
+            alert(`custoFinal: ${custoFinal}`)
+        }
+        let conta= ((Number(KWh.value) * Number(custoFinal.value)))
+            mensagem.innerHTML = (`sua conta desse mes foi de ${conta.value}`)
+    }
+</script>
