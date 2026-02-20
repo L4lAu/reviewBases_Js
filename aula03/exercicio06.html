@@ -17,10 +17,16 @@
     function calcular(){
         custo = 0.85
         if ((ipt_KWh.value) < 100 ) {
-            custoFinal = custo * 0.90
-            alert(`custoFinal: ${custoFinal}`)
+            conta = ((Number(ipt_KWh.value)) * (Number(custo)));
+
+            custoFinal = conta * 0.90;
+
+            mensagem.innerHTML = `sua conta desse mes foi de R$${custoFinal.toFixed(2)}`;
+        } else if ((ipt_KWh.value) >= 100 ) {
+
+            conta = ((Number(ipt_KWh.value)) * (Number(custo)));
+
+            mensagem.innerHTML = `sua conta desse mes foi de R$${conta.toFixed(2)}`;
         }
-        let conta= ((Number(KWh.value) * Number(custoFinal.value)))
-            mensagem.innerHTML = (`sua conta desse mes foi de ${conta.value}`)
     }
 </script>
