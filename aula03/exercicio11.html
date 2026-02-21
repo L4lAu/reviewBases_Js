@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quantidade de filhos</h1>
+    <input type="number" id="filhos">
+    <button onclick="analisar()">Analisar família</button>
+    <span id="resultado"></span>
+</body>
+</html>
+<script>
+     function analisar(){
+        let qtd = Number(filhos.value)
+         if(qtd >= 4){
+            resultado.innerHTML = "Não tem Netflix"
+        }else if(qtd >= 3){
+            resultado.innerHTML = "Não tem video game"
+        }else if (qtd >= 2){
+            resultado.innerHTML = "Não tem internet"
+        } else if(qtd >= 1){
+            resultado.innerHTML = "Não tem TV"
+        } 
+    }
+</script>
