@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>peso da criança</h1>
+    <input type="number" id="peso">
+    <button onclick="analisar()">analisar peso</button>
+    <span id="mensagem"></span>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        let p = Number(peso.value);
+        
+        if (p <= 13.5){
+            mensagem.innerHTML = " abaixo do peso"
+        }else if(p == 18.3) {
+            mensagem.innerHTML = "peso perfeito"
+        } else if (p <= 21.2){
+            mensagem.innerHTML = "peso na media"
+        } else {
+            mensagem.innerHTML = "acima do peso"
+        }
+    }
+</script>
