@@ -1,0 +1,23 @@
+<script>
+    function calcular(){
+        let mb = Number(input_mb.value);
+        let indicacao = Number(input_indicacao.value);
+
+        let valorBase;
+
+        if(mb => 200){
+            valorBase = mb + 20; 
+        } else if(mb < 200) {
+            valorBase = mb - 20;
+        }
+
+        let valorFinal = valorBase
+        if(telefone == 'sim') {
+            valorFinal = valorBase + (valorBase * 20 / 100);
+            
+            div_mensagem.innerHTML = ""
+        } else {
+            div_mensagem.innerHTML = ""
+        }
+    }
+</script>
