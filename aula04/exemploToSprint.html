@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt_text" oninput="analisar()">
+    <div id="mensagem"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        
+        let texto = ipt_text.value 
+        let tamanhoTexto = texto.length // RETORNA O NUMERO DE CARACTERES DO TEXTO
+
+        mensagem.innerHTML = `O tamanho do texto é: ${tamanhoTexto}`
+
+        // RETORNA SE O TEXTO É MENOR OU MAIOR QUE 8 CARACTERES
+        if (tamanhoTexto >=8) {
+            mensagem.innerHTML += `<br>O texto tem 8 ou mais caracteres`
+        } else {
+            mensagem.innerHTML += `<br>O texto é menor que 8 caracteres`
+        }
+
+
+        
+        let indice_ponto_com = texto.indexOf(".com"); // VERIFICA QUNTOS CARACTERES TEM ANTES DO .COM
+        let indice_arroba = texto.indexOf("@"); //VERIFICA QUANTOS CARACTERES TEM ANTES DO @
+        let arroba_antes_ponto_com = indice_arroba + indice_ponto_com; //VERIFICA SE O @ ESTA ANTES DO .COM
+        let termina_ponto_com = texto.endsWith(".com"); //VERIFICA SE TERMINA COM .COM
+        let termina_ponto_com_ponto_br = texto.endsWith(".com.br") //VERIFICA SE TERMINA COM .COM.BR
+        
+        // RETORNA O INDICE DO .COM
+        mensagem.innerHTML += `<br>indice do .com: ${indice_ponto_com}`
+
+        // RETORNA SE O EMAIL É VALIDO
+        if(arroba_antes_ponto_com && indice_arroba > 0 && indice_ponto_com  > 0 && (termina_ponto_com || termina_ponto_com_ponto_br)) {
+            mensagem.innerHTML += "<br> email é valido"
+        } else {
+            mensagem.innerHTML += '<br> email invalido'
+        }
+
+
+        // RETORNA A PRIMEIRA E ULTIMA LETRTA DO TEXTO
+        if(tamanhoTexto > 0) {
+            let primeira_letra = texto[0];
+            let ultima_letra = texto[tamanhoTexto -1];
+            
+            mensagem.innerHTML += `<br>primeira letra do texto: ${primeira_letra}`;
+            mensagem.innerHTML += `<br>ultima letra do texto: ${ultima_letra}`;
+        }
+
+        // TRANSFORMA O TEXTO EM MAIUSCULAS OU MINU
+        let texto_maiuscula = texto.toUpperCase();
+        let texto_minuscula = texto.toLowerCase();
+
+        mensagem.innerHTML += `<br>texto em maiuscula: ${texto_maiuscula}`
+        mensagem.innerHTML += `<br>texto em minuscula: ${texto_minuscula}`
+
+
+        // SEPARA UM PEDAÇO DO TEXTO
+        let pedacoDoTexto = texto.substring(2, 8);
+        mensagem.innerHTML += `<br>pedaco do texto entre 3 e 7: ${pedacoDoTexto}`
+
+
+        // FORMATA O TEXTO (PRIMEIRA LETRA MAIUSCULA)
+        let textoFormatado = texto[0].toUpperCase() + texto.substring(1).toLowerCase();
+        mensagem.innerHTML += `<br>texto formatado: ${textoFormatado}`;
+
+        // TROCA A LETRA I POR 1 NO TEXTO
+        texto_com_1_no_lugar_do_i = texto.replaceAll("i", "1");
+        mensagem.innerHTML += `<br>texto com 1 no lugar do i ${texto_com_1_no_lugar_do_i}`;
+
+
+
+
+        // VERIFICA SE TEM CARACTERES DO TIPO ENTRE 0 E 9
+        let regex = new RegExp("[0-9]");
+        let contemNumeros = regex.test(texto);
+
+        if(contemNumeros) {
+            mensagem.innerHTML += 'o texto contem numeros<br>'
+        } else {
+            mensagem.innerHTML += `o texto não contem numeros<br>`
+        }
+}
+</script>

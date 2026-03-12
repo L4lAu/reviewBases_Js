@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>sua dieta esta saudavel?</h1>
+    <p>quantos pães franceses tem comido por dia?</p>
+    <input type="number" id="ipt_paes">
+    <p>quantos pacotes de bolacha voce tem comido por dia?</p>
+    <input type="number" id="ipt_bolacha">
+    <p>quantos copos de achocolatado voce tem tomado por dia?</p>
+    <input type="number" id="ipt_copo">
+    <br>
+    <button onclick="verificarCalorias()">verificar calorias</button>
+    <br>
+    <div id="mensagem"></div>
+</body>
+</html>
+
+<script>
+    function verificarCalorias(){
+        let paes = Number(ipt_paes.value) * 50;
+        let bolacha = Number(ipt_bolacha.value) * 80;
+        let copo = Number(ipt_copo.value) * 70;
+
+        let somaCalorias = paes + bolacha + copo;
+
+        if(somaCalorias < 200) {
+            mensagem.innerHTML = 'Parabens, vai ficar em forma!';
+        } else if (somaCalorias <= 400) {
+            mensagem.innerHTML = 'Cuidado, vai ficar menos saudavel!';
+        } else {
+            mensagem.innerHTML = 'Alerta critico de saude!!!'
+        }
+    }
+</script>
