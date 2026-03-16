@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>login</p>
+    <input type="text" id="ipt_login">
+    <p>senha</p>
+    <input type="text" id="ipt_senha">
+    <p>informação pessoal</p>
+    <input type="text" id="ipt_informacaoPessoal">
+    <button onclick="autenticar()">autenticar</button> <br>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    let tentativas = 3;
+    function autenticar() {
+        let login = ipt_login.value;
+        let senha = ipt_senha.value;
+        let informacao = ipt_informacaoPessoal.value;
+
+        if (tentativas > 0) {
+            // EM CASO DE ERRRO NA AUTENTICAÇÃO COM CREDENCIAIS CORRETAS TIRE AS ASPAS E PONHA-AS DE VOLTA
+            if (login == "ana" && senha == "braga" && (informacao == "1949" || informacao == "louro josé")) {
+                tentativas = 3
+                mensagem.innerHTML = "Usuario autenticado";
+            } else {
+                tentativas = tentativas - 1
+                mensagem.innerHTML = "Falha na Autenticação"
+                mensagem.innerHTML += `Voce ainda tem ${tentativas} tentativa(s)`
+                if (tentativas == 0) {
+                    mensagem.innerHTML += "<br>usuario BLOQUEADO! procure seu gerente!"
+                }
+            }
+        } else {
+            mensagem.innerHTML = "usuario BLOQUEADO! procure seu gerente!"
+        }
+    }
+</script>
