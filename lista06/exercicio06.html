@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>nota do aluno</p>
+    <input type="number" id="ipt_nota">
+    <p>frequencia do aluno</p>
+    <input type="number" id="ipt_frequencia"><br>
+    <button onclick="avaliarAluno()">avaliar aluno</button><br>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function avaliarAluno() {
+        let nota = Number(ipt_nota.value);
+        let frequencia = Number(ipt_frequencia.value);
+
+
+        if (nota < 0 || nota > 10) {
+
+            alert('Onde já se viu nota < 0 ou > 10?!')
+            mensagem.innerHTML = ""
+
+        } else if (frequencia < 0 || frequencia > 100) {
+
+            alert('Onde já se viu frequencia < 0 ou > 100?!')
+            mensagem.innerHTML = ""
+
+        } else {
+            if (frequencia < 75) {
+                mensagem.innerHTML = "Aluno reprovado por frequencia"
+            } else if (frequencia > 74) {
+                mensagem.innerHTML = "Aluno aprovado por frequencia"
+            }
+
+            if (nota < 6) {
+                mensagem.innerHTML += "<br>Aluno ficou abaixo da média"
+            } else if (nota < 9) {
+                mensagem.innerHTML += "<br>Aluno ficou na média"
+            } else if (nota < 11) {
+                mensagem.innerHTML += "<br>Aluno acima da média"
+            }
+
+        }
+
+
+    }
+</script>
