@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>tamanho da tela</p>
+    <input type="number" id="ipt_tela">
+    <p>cor do celular</p>
+    <input type="text" id="ipt_cor">
+    <button onclick="avaliarEscolha()">será que ele gosta?</button> <br>
+    <div id="mensagem"></div>
+</body>
+</html>
+
+<script>
+    function avaliarEscolha(){
+        let tela = Number(ipt_tela.value);
+        let cor = (ipt_cor.value).toLowerCase();
+
+        console.log(cor);
+
+        if(tela > 6.5 && cor == 'preto'){
+            mensagem.innerHTML = "Vai gostar! 😁"
+        } else {
+            mensagem.innerHTML = '😑'
+        }
+    }
+</script>
