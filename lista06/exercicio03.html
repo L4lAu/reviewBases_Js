@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>tipo de passageiro(estudante, idoso/PNE, comum)</p>
+    <input type="text" id="ipt_tipo_passageiro">
+    <p>tipo passagem(passagem unica, passagem integração)</p>
+    <input type="text" id="ipt_tipo_passagem">
+    <button onclick="simulaPreco()">simular o preco</button>
+    <div id="mensagem"></div>
+</body>
+
+</html>
+
+<script>
+    function simulaPreco() {
+        let tipo = (ipt_tipo_passageiro.value).toLowerCase();
+        let tipoPassagem = (ipt_tipo_passagem.value).toLowerCase();
+        let passagem = 0;
+
+        console.log(tipo, ':' ,tipoPassagem);
+
+        if (tipoPassagem == "passagem unica") {
+            passagem = 4.40;
+        } else if (tipoPassagem == "passagem integração") {
+            passagem = 5.90;
+        }
+
+
+        if (tipo == 'estudante') {
+            mensagem.innerHTML = `Valor da passagem escolhida: R$${(passagem * 0.5).toFixed(2)}`
+        } else if (tipo == 'idoso') {
+            mensagem.innerHTML = `Valor da passagem escolhida: R$${passagem * 0}`
+        } else if (tipo == 'comum') {
+            mensagem.innerHTML = `Valor da passagem escolhida: R$${passagem.toFixed(2)}`
+        } else {
+            mensagem.innerHTML = "tipo passageiro invalido"
+        }
+
+    }
+</script>
