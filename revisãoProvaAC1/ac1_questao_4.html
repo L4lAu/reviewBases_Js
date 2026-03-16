@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Questão 4</title>
+</head>
+<body>
+   <h2>Questão 4</h2>
+   <span>Quantidade de m³ de gás consumidos:</span>
+   <input type="text" id="input_metros"> <br>
+
+   <span>Tipo de Sistema: "GN" (Gás Natural) ou "GLP" (Gás de Botijão)</span>
+   <input type="text" id="input_sistema"> <br>
+
+   <span>Valor da Taxa de Instalação Fixa em Reais: </span>
+   <input type="text" id="input_taxa"> <br>
+
+   <button onclick="calcular()">Calcular Despesa</button>
+
+   <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+/* Faça sua lógica aqui! Não altere o HTML. */
+function calcular() {
+   let m = Number(input_metros.value);
+   let sistema = input_sistema.value;
+   let taxa = Number(input_taxa.value);
+   
+   if (sistema == "gn") {
+      if(m <= 20) {
+         let valorBase = m * 6;
+         let valorBruto = valorBase + taxa;
+         let percentual = (taxa * 100) / valorBruto;
+
+         div_mensagem.innerHTML += `O valor final é R$${valorBruto.toFixed(2)}. A taxa fixa de R$${taxa.toFixed(2)} representou ${percentual.toFixed(2)}% do total bruto.<br>`
+      } else {
+         let valorBase = m * 8;
+         let valorBruto = valorBase + taxa;
+         let percentual = (taxa * 100) / valorBruto;
+
+         div_mensagem.innerHTML += `O valor final é R$${valorBruto.toFixed(2)}. A taxa fixa de R$${taxa.toFixed(2)} representou ${percentual.toFixed(2)}% do total bruto.<br>`
+      }
+   } 
+   if (sistema == "glp") {
+      if(m <= 20) {
+         let valorBase = m * 5;
+         let valorBruto = valorBase + taxa;
+         let percentual = (taxa * 100) / valorBruto;
+
+         div_mensagem.innerHTML += `O valor final é R$${valorBruto.toFixed(2)}. A taxa fixa de R$${taxa.toFixed(2)} representou ${percentual.toFixed(2)}% do total bruto.<br>`
+      } else {
+         let valorBase = m * 7.50;
+         let valorBruto = valorBase + taxa;
+         let percentual = (taxa * 100) / valorBruto;
+
+         div_mensagem.innerHTML += `O valor final é R$${valorBruto.toFixed(2)}. A taxa fixa de R$${taxa.toFixed(2)} representou ${percentual.toFixed(2)}% do total bruto.<br>`
+      }
+   } 
+}
+</script>
+

@@ -1,0 +1,16 @@
+<script>
+    function calcular(){
+        let kwh = Number(input_kwh.value);
+        let valorConta = 0;
+
+        if (kwh < 100) {
+            valorConta = kwh * 0.95 
+
+            div_mensagem.innerHTML = ""
+        } else {
+            valorConta = kwh * 1.5
+
+            div_mensagem.innerHTML = ""
+        }
+    }
+</script>
