@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+    let frutas = [
+        'abacate',
+        'uva',
+        7,
+        8,
+        9,
+        'pera'
+    ];
+
+    console.log(frutas);
+    console.log('tamanho do vetor: ', frutas.length);
+    console.log('primeiro item do vetor: ', frutas[0]);
+    console.log('ultimo item do vetor: ', frutas[frutas.length -1]);
+
+    frutas.push('goiaba');
+    frutas.push('goiaba');
+    console.log('lista atualizada: ', frutas);
+
+
+    let existePera = frutas.includes("pera");
+
+    if(existePera) {
+        console.log("existe pera na lista");
+    } else{
+        console.log("não existe pera na lista");
+    };
+    frutas.pop();
+    console.log('lista sem o 5º item: ', frutas)
+    frutas.shift();
+    frutas.unshift('laranja');
+    console.log('lista atualizada: ', frutas)
+</script>

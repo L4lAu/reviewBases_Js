@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>qual seu palpite?</h1>
+    <br><br><span>1º lugar</span>
+    <input type="text" id="ipt_lugar1">
+    <br><br><span>2º lugar</span>
+    <input type="text" id="ipt_lugar2">
+    <br><br><span>3º lugar</span>
+    <input type="text" id="ipt_lugar3">
+    <br><br><span>4º lugar</span>
+    <input type="text" id="ipt_lugar4">
+    <br><br><span>5º lugar</span>
+    <input type="text" id="ipt_lugar5">
+    
+    <br><button onclick="verificar()">verificar aposta</button>
+    <div id="mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+    
+    let competidores = [
+        "apela pato",
+        'nobru',
+        'two9',
+        'level up',
+        'play hard'
+    ]
+    mensagem.innerHTML = `${competidores}`
+    
+    
+    function verificar(){
+        let pontos = 0;
+        let lugar1 = ipt_lugar1.value.toLowerCase();
+        let lugar2 = ipt_lugar2.value.toLowerCase();
+        let lugar3 = ipt_lugar3.value.toLowerCase();
+        let lugar4 = ipt_lugar4.value.toLowerCase();
+        let lugar5 = ipt_lugar5.value.toLowerCase();
+
+        let acertos = []
+        let erros = []
+
+        if(lugar1 == competidores[0]){
+            pontos = pontos + 1;
+            acertos.push(competidores[0]);
+        }else {
+            erros.push(competidores[0]);
+        }
+
+
+        if(lugar2 == competidores[1]){
+            pontos = pontos + 1
+            acertos.push(competidores[1]);
+        }else {
+            erros.push(competidores[1]);
+        }
+
+
+        if(lugar3 == competidores[2]){
+            pontos = pontos + 1
+            acertos.push(competidores[2]);
+        }else {
+            erros.push(competidores[2]);
+        }
+
+
+        if(lugar4 == competidores[3]){
+            pontos = pontos + 1
+            acertos.push(competidores[3]);
+        }else {
+            erros.push(competidores[3]);
+        }
+        
+        if(lugar5 == competidores[4]){
+            pontos = pontos + 1
+            acertos.push(competidores[4]);
+        }else {
+            erros.push(competidores[4]);
+        }
+        
+        mensagem.innerHTML = `<br>voce acertou os nomes de: ${acertos}`
+        mensagem.innerHTML += `<br> sua pontuação ${pontos}`
+        mensagem.innerHTML += `<br> foram ${erros.length} erros`
+        mensagem.innerHTML += `<br> voce errou os nomes de ${erros}`
+
+        if( ((acertos.length) / (erros.length)) > 1) {
+            mensagem.innerHTML += "<br>voce conhece bem essa competição"
+        } else {
+            mensagem.innerHTML += "<br>Você precisa acompanhar mais essa competição!"
+        }
+    }
+</script>
