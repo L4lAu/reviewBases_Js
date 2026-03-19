@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head> 
+<body>
+    <p>nome do aluno a ser cadastrado</p>
+    <input type="text" id="ipt_nome">
+    <p>nome do aluno que deseja remover</p>
+    <input type="text" id="ipt_remover">
+    
+    <br><button onclick="exibir()">exibir</button>
+    <br><button onclick="cadastar()">cadastrar</button>
+    <br><button onclick="remover()">remover</button>
+    <br><button onclick="atualizar()">atualizar aluno</button>
+    <div id="mensagem"></div>
+</body>
+</html>
+
+<script>
+    let alunos = []
+    function exibir (){
+        if(alunos.length > 0) {
+            mensagem.innerHTML = alunos;
+        } else {
+            mensagem.innerHTML = "não tem alunos cadastrados";
+        }
+    }
+
+    function cadastar (){
+        let nome = ipt_nome.value;
+        
+        if(nome.length > 0) {
+            if(alunos.includes(nome)) {
+                mensagem.innerHTML = "Aluno já cadastrado";
+            } else {
+                alunos.push(nome);
+                mensagem.innerHTML = `Aluno ${nome} foi cadastrado(a) com sucesso!` 
+            }
+        } else {
+            mensagem.innerHTML = "Preencha o campo de nome para cadastrar"
+        }
+    }
+
+    function remover(){
+        let remove = ipt_remover.value;
+
+        if(remove.length > 0) {
+            if(alunos.includes(remove)){
+                alunos.pop(remove);
+                mensagem.innerHTML += alunos;
+            } else{
+                mensagem.innerHTML =  "Aluno não encontrado na lista";
+            }
+        } else {
+            mensagem.innerHTML = "prenncha o campo para remover o aluno"
+        }
+    }
+</script>

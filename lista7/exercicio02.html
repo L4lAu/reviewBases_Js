@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>nome do lugar</p>
+    <input type="text" id="ipt_nomeLugar">
+    <p>valor gasto na viagem</p>
+    <input type="number" id="ipt_valorGasto">
+    <button onclick="cadastrar()">cadastrar</button>
+    <div id="mensagem"></div>
+
+
+    <h1>buscar lugar</h1>
+    <input type="text" id="ipt_buscar">
+    <button onclick="buscar()">Buscar</button>
+</body>
+</html>
+
+<script>
+    let nomes = [];
+    let valores = []
+    
+    function cadastrar() {
+        let nomeLugar = ipt_nomeLugar.value.toLowerCase();
+        let valor = Number(ipt_valorGasto.value)
+        nomes.push(`${nomeLugar}`);
+        valores.push(`${valor}`);
+        mensagem.innerHTML += `<br>${nomeLugar} : ${valor}`
+    }
+
+    function buscar(){
+        let busca = ipt_buscar.value.toLowerCase();
+        
+        if(nomes.includes(busca)){
+            let index_nome = nomes.indexOf(busca);
+            let ultimo_index = nomes.lastIndexOf(busca);
+            
+            if (ultimo_index) {
+                mensagem.innerHTML += `<br>voce ja visitou esse lugar e gastou ${valores[index_nome]} da primeira vez e ${valores[ultimo_index]} da ultima vez`
+            } else {
+                mensagem.innerHTML += `<br>voce já visitou esse lugar e gastou ${valores[index_nome]}`;
+            }
+        } else {
+            mensagem.innerHTML += "voce nunca visitou esse local"
+        }
+    }
+</script>
