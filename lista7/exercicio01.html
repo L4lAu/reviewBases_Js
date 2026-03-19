@@ -21,6 +21,15 @@
     <br><button onclick="verificar()">verificar aposta</button>
     <div id="mensagem"></div>
     
+    <h1>Meus campeões</h1>
+    <p>adicione um campeão</p>
+    <input type="text" id="ipt_campeao">
+    <button onclick="adicionar()">adicionar</button>
+
+    <h1>buscar campeão</h1>
+    <input type="text" id="ipt_busca">
+    <button onclick="buscar()">pesquisar</button>
+    
 </body>
 </html>
 
@@ -94,6 +103,32 @@
             mensagem.innerHTML += "<br>voce conhece bem essa competição"
         } else {
             mensagem.innerHTML += "<br>Você precisa acompanhar mais essa competição!"
-        }
+        }mensagem.innerHTML += `<br>${competidores[0].toUpperCase()} 🥇`   
     }
+
+
+    let meusCampeoes = [];
+
+    function adicionar (){
+        let addCampeao = ipt_campeao.value.toLowerCase();
+        meusCampeoes.push(addCampeao);
+        mensagem.innerHTML = `${meusCampeoes}`;
+    }
+
+
+    function buscar(){
+        let pesquisa = ipt_busca.value.toLowerCase();
+
+        if(meusCampeoes.includes(pesquisa)) {
+            mensagem.innerHTML += `<br>esse campeao esta na sua lista pessoal: ${meusCampeoes}`;
+        }
+        if (competidores.includes(pesquisa)) {
+            mensagem.innerHTML +=  `<br>esse campeão esta no ranking: ${competidores}`;
+        }
+        if (competidores.includes(pesquisa) && meusCampeoes.includes(pesquisa)) {
+            mensagem.innerHTML += "<br>o campeao esta no ranking e na sua lista pessoa, voce tem boa visão";
+        } 
+        if (competidores.includes(pesquisa) == false && meusCampeoes.includes(pesquisa) == false) {
+            mensagem.innerHTML += "<br>não foi possivel encontrar esse campeao"
+        }
 </script>
