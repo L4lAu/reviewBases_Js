@@ -21,24 +21,29 @@
 
 <script>
     let alunos = []
-    function exibir (){
+    function exibir(){
+        
         if(alunos.length > 0) {
             mensagem.innerHTML = alunos;
         } else {
             mensagem.innerHTML = "não tem alunos cadastrados";
         }
+
     }
 
-    function cadastar (){
+    function cadastar(){
         let nome = ipt_nome.value;
         
+
         if(nome.length > 0) {
+
             if(alunos.includes(nome)) {
                 mensagem.innerHTML = "Aluno já cadastrado";
             } else {
                 alunos.push(nome);
                 mensagem.innerHTML = `Aluno ${nome} foi cadastrado(a) com sucesso!` 
             }
+
         } else {
             mensagem.innerHTML = "Preencha o campo de nome para cadastrar"
         }
@@ -48,14 +53,31 @@
         let remove = ipt_remover.value;
 
         if(remove.length > 0) {
+
             if(alunos.includes(remove)){
-                alunos.pop(remove);
+                let posicao_remove = alunos.indexOf(remove)
+                alunos.splice(posicao_remove, 1);
                 mensagem.innerHTML += alunos;
             } else{
                 mensagem.innerHTML =  "Aluno não encontrado na lista";
             }
+
         } else {
             mensagem.innerHTML = "prenncha o campo para remover o aluno"
+        }
+    }
+
+    function atualizar(){
+        let remove = ipt_remover.value;
+        let nome = ipt_nome.value;
+
+        if (remove.length > 0 && nome.length > 0) {
+            let posicao_remove = alunos.indexOf(remove);
+
+            alunos.splice(posicao_remove, 1, nome);
+            mensagem.innerHTML += `<br>nome do aluno atualizado com sucesso, nova lista: ${alunos}`;
+        } else {
+            mensagem.innerHTML = "preencha o campo de adicionar e remover"
         }
     }
 </script>
